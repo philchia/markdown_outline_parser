@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MarkdownOutlineParser-iOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>MarkdownOutlineParser.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>6638EA771C98F67300150614</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>66D676ED1C96A1DA00201C20</key>
 		<dict>
 			<key>primary</key>

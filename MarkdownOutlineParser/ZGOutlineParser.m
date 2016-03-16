@@ -7,11 +7,8 @@
 //
 
 #import "ZGOutlineParser.h"
-#import <AppKit/AppKit.h>
 
-@implementation ZGOutlineParser {
-	NSTimer *parseOutlineDelayTimer;
-}
+@implementation ZGOutlineParser
 
 + (instancetype)sharedParser {
 	static ZGOutlineParser *parser = nil;
@@ -24,25 +21,9 @@
 	return parser;
 }
 
-- (void)parseTextView:(NSTextView *)textView withDelay:(NSTimeInterval)delay withCompletionHandler:(void (^)(ZGOutline*))completionHandler {
-	[parseOutlineDelayTimer invalidate];
-	parseOutlineDelayTimer = nil;
-	parseOutlineDelayTimer = [NSTimer scheduledTimerWithTimeInterval:delay target:self selector:@selector(parseText:) userInfo:@{@"next": completionHandler, @"textView": textView} repeats:NO];
-}
-
-- (void)parseText:(NSTimer *)timer {
-	void(^nextAction)(ZGOutline* outline) = nil;
-	NSTextView *textView = nil;
-	if (parseOutlineDelayTimer.isValid) {
-		nextAction = parseOutlineDelayTimer.userInfo[@"next"];
-		textView =  parseOutlineDelayTimer.userInfo[@"textView"];
-		[parseOutlineDelayTimer invalidate];
-		} else {
-			return;
-	}
-	NSString *string = textView.textStorage.string;
+- (void)parseString:(NSString *)text withCompletionHandler:(void (^)(ZGOutline*))completionHandler {
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-		NSArray *lines = [string componentsSeparatedByString:@"\n"];
+		NSArray *lines = [text componentsSeparatedByString:@"\n"];
 		NSUInteger count = lines.count;
 		NSMutableArray *nodes = [NSMutableArray arrayWithCapacity:count];
 		NSUInteger start = 0;
@@ -64,7 +45,7 @@
 		
 		ZGOutline *outline = [ZGOutline outlineWithNodes:nodes];
 		dispatch_async(dispatch_get_main_queue(), ^{
-			nextAction(outline);
+			completionHandler(outline);
 		});
 	});
 }

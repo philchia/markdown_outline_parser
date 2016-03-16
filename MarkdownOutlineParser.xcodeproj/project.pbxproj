@@ -10,6 +10,11 @@
 		6638EA711C98F47E00150614 /* ZGOutlineParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6638EA6C1C98F47E00150614 /* ZGOutlineParser.m */; };
 		6638EA721C98F47E00150614 /* ZGNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6638EA6E1C98F47E00150614 /* ZGNode.m */; };
 		6638EA731C98F47E00150614 /* ZGOutline.m in Sources */ = {isa = PBXBuildFile; fileRef = 6638EA701C98F47E00150614 /* ZGOutline.m */; };
+		6638EA7B1C98F67300150614 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6638EA7A1C98F67300150614 /* AppDelegate.swift */; };
+		6638EA7D1C98F67300150614 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6638EA7C1C98F67300150614 /* ViewController.swift */; };
+		6638EA801C98F67300150614 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6638EA7E1C98F67300150614 /* Main.storyboard */; };
+		6638EA821C98F67300150614 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6638EA811C98F67300150614 /* Assets.xcassets */; };
+		6638EA851C98F67300150614 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6638EA831C98F67300150614 /* LaunchScreen.storyboard */; };
 		66D676F21C96A1DA00201C20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D676F11C96A1DA00201C20 /* AppDelegate.swift */; };
 		66D676F41C96A1DA00201C20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D676F31C96A1DA00201C20 /* ViewController.swift */; };
 		66D676F61C96A1DA00201C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66D676F51C96A1DA00201C20 /* Assets.xcassets */; };
@@ -24,6 +29,13 @@
 		6638EA6E1C98F47E00150614 /* ZGNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGNode.m; sourceTree = "<group>"; };
 		6638EA6F1C98F47E00150614 /* ZGOutline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGOutline.h; sourceTree = "<group>"; };
 		6638EA701C98F47E00150614 /* ZGOutline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGOutline.m; sourceTree = "<group>"; };
+		6638EA781C98F67300150614 /* MarkdownOutlineParser-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MarkdownOutlineParser-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6638EA7A1C98F67300150614 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6638EA7C1C98F67300150614 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6638EA7F1C98F67300150614 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6638EA811C98F67300150614 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6638EA841C98F67300150614 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6638EA861C98F67300150614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66D676EE1C96A1DA00201C20 /* MarkdownOutlineParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkdownOutlineParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D676F11C96A1DA00201C20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66D676F31C96A1DA00201C20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +46,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6638EA751C98F67300150614 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66D676EB1C96A1DA00201C20 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -57,10 +76,24 @@
 			name = "MOP-OC";
 			sourceTree = "<group>";
 		};
+		6638EA791C98F67300150614 /* MarkdownOutlineParser-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6638EA7A1C98F67300150614 /* AppDelegate.swift */,
+				6638EA7C1C98F67300150614 /* ViewController.swift */,
+				6638EA7E1C98F67300150614 /* Main.storyboard */,
+				6638EA811C98F67300150614 /* Assets.xcassets */,
+				6638EA831C98F67300150614 /* LaunchScreen.storyboard */,
+				6638EA861C98F67300150614 /* Info.plist */,
+			);
+			path = "MarkdownOutlineParser-iOS";
+			sourceTree = "<group>";
+		};
 		66D676E51C96A1DA00201C20 = {
 			isa = PBXGroup;
 			children = (
 				66D676F01C96A1DA00201C20 /* MarkdownOutlineParser */,
+				6638EA791C98F67300150614 /* MarkdownOutlineParser-iOS */,
 				66D676EF1C96A1DA00201C20 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				66D676EE1C96A1DA00201C20 /* MarkdownOutlineParser.app */,
+				6638EA781C98F67300150614 /* MarkdownOutlineParser-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +132,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6638EA771C98F67300150614 /* MarkdownOutlineParser-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6638EA891C98F67300150614 /* Build configuration list for PBXNativeTarget "MarkdownOutlineParser-iOS" */;
+			buildPhases = (
+				6638EA741C98F67300150614 /* Sources */,
+				6638EA751C98F67300150614 /* Frameworks */,
+				6638EA761C98F67300150614 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MarkdownOutlineParser-iOS";
+			productName = "MarkdownOutlineParser-iOS";
+			productReference = 6638EA781C98F67300150614 /* MarkdownOutlineParser-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		66D676ED1C96A1DA00201C20 /* MarkdownOutlineParser */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66D676FD1C96A1DA00201C20 /* Build configuration list for PBXNativeTarget "MarkdownOutlineParser" */;
@@ -125,6 +176,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = philchia;
 				TargetAttributes = {
+					6638EA771C98F67300150614 = {
+						CreatedOnToolsVersion = 7.3;
+					};
 					66D676ED1C96A1DA00201C20 = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -144,11 +198,22 @@
 			projectRoot = "";
 			targets = (
 				66D676ED1C96A1DA00201C20 /* MarkdownOutlineParser */,
+				6638EA771C98F67300150614 /* MarkdownOutlineParser-iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6638EA761C98F67300150614 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6638EA851C98F67300150614 /* LaunchScreen.storyboard in Resources */,
+				6638EA821C98F67300150614 /* Assets.xcassets in Resources */,
+				6638EA801C98F67300150614 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66D676EC1C96A1DA00201C20 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -161,6 +226,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6638EA741C98F67300150614 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6638EA7D1C98F67300150614 /* ViewController.swift in Sources */,
+				6638EA7B1C98F67300150614 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66D676EA1C96A1DA00201C20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,6 +251,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		6638EA7E1C98F67300150614 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6638EA7F1C98F67300150614 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6638EA831C98F67300150614 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6638EA841C98F67300150614 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		66D676F71C96A1DA00201C20 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -188,6 +278,35 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6638EA871C98F67300150614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "MarkdownOutlineParser-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.touchdream.MarkdownOutlineParser-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6638EA881C98F67300150614 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "MarkdownOutlineParser-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.touchdream.MarkdownOutlineParser-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		66D676FB1C96A1DA00201C20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -298,6 +417,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6638EA891C98F67300150614 /* Build configuration list for PBXNativeTarget "MarkdownOutlineParser-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6638EA871C98F67300150614 /* Debug */,
+				6638EA881C98F67300150614 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		66D676E91C96A1DA00201C20 /* Build configuration list for PBXProject "MarkdownOutlineParser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -20,22 +20,22 @@ public class Outline{
 public class Node: CustomStringConvertible{
 	var title: String?
 	var level: Int
-	var line: Int
+	var range: NSRange
 	
 	public var description: String {
-		return "\(title) level \(level) line \(line)"
+		return "\(title) level \(level) range \(range)"
 	}
 	
 	init() {
 		title = ""
 		level = 0
-		line = 0
+		range = NSMakeRange(0, 0)
 	}
 	
-	init(title: String, level: Int, line: Int) {
+	init(title: String, level: Int, range: NSRange) {
 		self.title = title
 		self.level = level
-		self.line = line
+		self.range = range
 	}
 	
 }
@@ -46,35 +46,35 @@ public class MOParser {
 	public func parseMarkdownOutline(text: String) -> Outline {
 		let outline = Outline()
 		let lines = text.componentsSeparatedByString("\n")
+		let count = lines.count
+		var start = 0
 		for (line, str) in lines.enumerate() {
 			if str.hasPrefix("#") {
-				let node = parseNode(str, line: line)
+				let node = parseNode(str, range: NSMakeRange(start, str.characters.count))
+				outline.appendNode(node)
+			} else if line + 1 < count && lines[line].hasPrefix("===") && lines[line].stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "=")).characters.count == 0 {
+				let node = Node(title: str, level: 1, range: NSMakeRange(start, str.characters.count))
+				outline.appendNode(node)
+			} else if line + 1 < count && lines[line].hasPrefix("---") && lines[line].stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: "-")).characters.count == 0 {
+				let node = Node(title: str, level: 2, range: NSMakeRange(start, str.characters.count))
 				outline.appendNode(node)
 			}
+			start = start + str.characters.count
 		}
 		return outline
 	}
 	
 	public func parseMarkdownOutline(text: String, completion: (Outline)->(Void)) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			let outline = Outline()
-			let lines = text.componentsSeparatedByString("\n")
-			for (line, str) in lines.enumerate() {
-				if str.hasPrefix("#") {
-					let node = self.parseNode(str, line: line)
-					outline.appendNode(node)
-				}
-			}
+			let outline = self.parseMarkdownOutline(text)
 			dispatch_async(dispatch_get_main_queue(), {
 				completion(outline)
 			})
 		}
-		
-		
 	}
 	
-	private func parseNode(text: String, line: Int) -> Node {
-		let node = Node(title: text, level: 0, line: line)
+	private func parseNode(text: String, range: NSRange) -> Node {
+		let node = Node(title: text, level: 0, range: range)
 		while node.title != nil && node.title!.hasPrefix("#") {
 			node.level++
 			node.title = node.title!.substringFromIndex(text.startIndex.advancedBy(1))
