@@ -13,6 +13,7 @@
 @class NSTextView;
 @interface ZGOutlineParser : NSObject
 
++ (instancetype)sharedParser;
 - (void)parseTextView:(NSTextView *)textView withDelay:(NSTimeInterval)delay withCompletionHandler:(void (^)(ZGOutline*))completionHandler;
 
 @end
