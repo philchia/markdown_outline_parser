@@ -74,11 +74,9 @@ public class MOParser {
 	}
 	
 	private func parseNode(text: String, range: NSRange) -> Node {
-		let node = Node(title: text, level: 0, range: range)
-		while node.title != nil && node.title!.hasPrefix("#") {
-			node.level++
-			node.title = node.title!.substringFromIndex(text.startIndex.advancedBy(1))
-		}
+		let header = text.commonPrefixWithString("######", options: NSStringCompareOptions.LiteralSearch)
+		let level = header.characters.count
+		let node = Node(title: header, level: level, range: range)
 		return node
 	}
 }
